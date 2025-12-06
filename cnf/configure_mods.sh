@@ -27,7 +27,7 @@ extdir() {
 			true
 		# just checking $i/$L.xs is NOT enough, since some extensions
 		# like cpan/List-Util have .xs files with different names
-		elif ls "$i" | grep -qE '.(xs|c)$'; then
+		elif ls "$i" | grep -qE '\.(xs|c)$'; then
 			extadd "xs" "$i"
 		elif [ -f "$i/Makefile.PL" -o -f "$i/Makefile" -o -d "$i/lib" -o -f "$i/$L.pm" ]; then
 			extadd "noxs" "$i"
